@@ -48,8 +48,6 @@ namespace TicTacToe
         }
         public void Position(char[] board, char player)
         {
-            while (true)
-            {
                 Console.WriteLine("Enter position from 1 to 9:");
                 int pos = Convert.ToInt32(Console.ReadLine());
                 if (board[pos] == ' ')
@@ -59,9 +57,8 @@ namespace TicTacToe
                 }
                 else
                 {
-                    Console.WriteLine("Position already Occupied");
+                    Console.WriteLine("Index is not free");
                 }
-            }
         }
     }
 }
