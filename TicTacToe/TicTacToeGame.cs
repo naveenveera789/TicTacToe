@@ -7,18 +7,19 @@ namespace TicTacToe
     public class TicTacToeGame
     {
         char[] board = new char[10];
-        public void Board()
+        public char[] Board()
         {
-            for(int i = 1; i < board.Length; i++)
+            for (int i = 1; i < board.Length; i++)
             {
                 board[i] = ' ';
             }
+            return board;
         }
-        public void PlayerChoosing()
+        public char PlayerChoosing()
         {
             Console.WriteLine("Choose X or O for playing the game : ");
             char player = Convert.ToChar(Console.ReadLine());
-            char input = char.ToUpper(player);         
+            char input = char.ToUpper(player);
             if (input == 'X')
             {
                 char computer = 'O';
@@ -31,6 +32,7 @@ namespace TicTacToe
                 Console.WriteLine("Player : " + input);
                 Console.WriteLine("Computer : " + computer);
             }
+            return player;
         }
         public void Display()
         {
@@ -43,6 +45,23 @@ namespace TicTacToe
             Console.WriteLine("     |     |     ");
             Console.WriteLine("  {0}  |  {1}  |  {2}", board[7], board[8], board[9]);
             Console.WriteLine("     |     |     ");
+        }
+        public void Position(char[] board, char player)
+        {
+            while (true)
+            {
+                Console.WriteLine("Enter position from 1 to 9:");
+                int pos = Convert.ToInt32(Console.ReadLine());
+                if (board[pos] == ' ')
+                {
+                    board[pos] = player;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Position already Occupied");
+                }
+            }
         }
     }
 }
