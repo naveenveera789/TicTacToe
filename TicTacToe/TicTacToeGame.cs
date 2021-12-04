@@ -18,15 +18,17 @@ namespace TicTacToe
         {
             Console.WriteLine("Choose X or O for playing the game : ");
             char player = Convert.ToChar(Console.ReadLine());
-            Console.WriteLine("Player : " + player);
-            if (player == 'X' || player == 'x')
+            char input = char.ToUpper(player);         
+            if (input == 'X')
             {
                 char computer = 'O';
+                Console.WriteLine("Player : " + input);
                 Console.WriteLine("Computer : " + computer);
             }
-            if (player == 'O' || player == 'o')
+            if (input == 'O')
             {
                 char computer = 'X';
+                Console.WriteLine("Player : " + input);
                 Console.WriteLine("Computer : " + computer);
             }
         }
