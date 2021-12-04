@@ -53,7 +53,7 @@ namespace TicTacToe
                 if (board[pos] == ' ')
                 {
                     board[pos] = player;
-                    break;
+                    return;
                 }
                 else
                 {
