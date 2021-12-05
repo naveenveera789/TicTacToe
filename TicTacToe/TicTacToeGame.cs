@@ -48,7 +48,7 @@ namespace TicTacToe
         }
         public void Position(char player)
         {
-            char input = char.ToUpper(player);
+          char input = char.ToUpper(player);
             Console.WriteLine("Enter Position from 1 to 9 : ");
             int pos = Convert.ToInt32(Console.ReadLine());
             if (board[pos] == ' ')
