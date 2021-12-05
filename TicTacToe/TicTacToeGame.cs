@@ -46,19 +46,16 @@ namespace TicTacToe
             Console.WriteLine("  {0}  |  {1}  |  {2}", board[7], board[8], board[9]);
             Console.WriteLine("     |     |     ");
         }
-        public void Position(char[] board, char player)
+        public void Position(char player)
         {
-                Console.WriteLine("Enter position from 1 to 9:");
-                int pos = Convert.ToInt32(Console.ReadLine());
-                if (board[pos] == ' ')
-                {
-                    board[pos] = player;
-                    return;
-                }
-                else
-                {
-                    Console.WriteLine("Index is not free");
-                }
+          char input = char.ToUpper(player);
+            Console.WriteLine("Enter Position from 1 to 9 : ");
+            int pos = Convert.ToInt32(Console.ReadLine());
+            if (board[pos] == ' ')
+            {
+                board[pos] = input;
+                return;
+            }
         }
     }
 }
