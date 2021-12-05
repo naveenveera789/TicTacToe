@@ -46,21 +46,15 @@ namespace TicTacToe
             Console.WriteLine("  {0}  |  {1}  |  {2}", board[7], board[8], board[9]);
             Console.WriteLine("     |     |     ");
         }
-        public void Position(char[] board, char player)
+        public void Position(char player)
         {
-            while (true)
+            char input = char.ToUpper(player);
+            Console.WriteLine("Enter position from 1 to 9:");
+            int pos = Convert.ToInt32(Console.ReadLine());
+            if (board[pos] == ' ')
             {
-                Console.WriteLine("Enter position from 1 to 9:");
-                int pos = Convert.ToInt32(Console.ReadLine());
-                if (board[pos] == ' ')
-                {
-                    board[pos] = player;
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("Position already Occupied");
-                }
+                board[pos] = input;
+                return;
             }
         }
     }

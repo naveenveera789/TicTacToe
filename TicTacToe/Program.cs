@@ -11,7 +11,7 @@ namespace TicTacToe
             char[] board = game.Board();
             char player = game.PlayerChoosing();
             game.Display();
-            game.Position(board, player);
+            game.Position(player);
             game.Display();
         }
     }
